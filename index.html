@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Folha de Pagamento</title>
+    <link rel="stylesheet" href="css/estilo.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+</body>
+
+
+<body>
+
+    <div class="formulario">
+        <h1>Sistema de Calculo de Folha de Pagamento</h1>
+        <h2>Calculo do INSS</h2>
+
+        <form id="salario"onsubmit="processaCalculo(event)">
+            <label for="number">Salario bruto R$</label>
+           
+            <input type="number" id="salario" placeholder="Ex: 1000,00"   step="0,01"
+           required title="Informe o salario">
+
+            <label for="inss">INSS</label>
+            <input type="number" id="inss"
+             placeholder="0000" title="Informe o IRS" required>
+
+           
+            <label for=" irrf"> </label>IRRF</label>
+            <input type="number" id="irrf" 
+            placeholder="0000" title="Informe o IRRF" required>
+
+            <label for="liquido"> Valor Liquido R$</label>
+            <input type="number" id="liquido" 
+            placeholder="Ex: 1000,00" title="Salario liquido"
+            required>
+
+            <button type="Submit">Calcular o Resultado</button>
+            <button type="Reset" class="limpar"> Limpar</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>
