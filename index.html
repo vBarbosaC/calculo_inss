@@ -1,48 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo Folha de Pagamento</title>
-    <link rel="stylesheet" href="css/estilo.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <title>Calculadora Salarial 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-</body>
-
 
 <body>
 
-    <div class="formulario">
-        <h1>Sistema de Calculo de Folha de Pagamento</h1>
-        <h2>Calculo do INSS</h2>
+    <form class="formulario" onsubmit="calcularSalarioPrincipal(event)">
+        <h2>Holerite Digital 2026</h2>
 
-        <form id="salario"onsubmit="processaCalculo(event)">
-            <label for="number">Salario bruto R$</label>
-           
-            <input type="number" id="salario" placeholder="Ex: 1000,00"   step="0,01"
-           required title="Informe o salario">
+        <label for="salarioBruto">Salário Bruto (R$)</label>
+        <input type="number" id="salarioBruto" placeholder="Digite o salário bruto" step="0.01" autofocus>
 
-            <label for="inss">INSS</label>
-            <input type="number" id="inss"
-             placeholder="0000" title="Informe o IRS" required>
+        <label for="descInss">Desconto INSS (Tabela 2026)</label>
+        <input type="text" id="descInss" disabled placeholder="R$ 0,00">
 
-           
-            <label for=" irrf"> </label>IRRF</label>
-            <input type="number" id="irrf" 
-            placeholder="0000" title="Informe o IRRF" required>
+        <label for="descIrrf">Imposto de Renda (Isenção até 5k)</label>
+        <input type="text" id="descIrrf" disabled placeholder="R$ 0,00">
 
-            <label for="liquido"> Valor Liquido R$</label>
-            <input type="number" id="liquido" 
-            placeholder="Ex: 1000,00" title="Salario liquido"
-            required>
+        <button type="submit" id="btnCalcular">Calcular Agora</button>
+        <button type="button" id="btnLimpar" class="clear">Limpar Tudo</button>
 
-            <button type="Submit">Calcular o Resultado</button>
-            <button type="Reset" class="limpar"> Limpar</button>
+        <div id="resultado">
+            <strong>Salário Líquido Final:</strong>
+            <span id="valorLiquido">R$ 0,00</span>
+        </div>
+    </form>
 
-        </form>
-    </div>
-    
+    <script src="js/script.js"></script>
 </body>
+
 </html>
